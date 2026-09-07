@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8551cceeb444feda78909d9e8338d8, type: 3}
+  m_Name: Vigilante
+  m_EditorClassIdentifier: UtezHorror.Enemies::UtezHorror.Enemies.EnemyConfig
+  displayName: El Vigilante
+  designNotes: "Patrulla los pasillos a ritmo constante. No es r\xE1pido, es persistente: te oye correr desde lejos y no se rinde pronto. El primero, y el que ense\xF1a las reglas."
+  patrolSpeed: 1.5
+  chaseSpeed: 4
+  sightRange: 16
+  sightAngle: 95
+  hearingMultiplier: 1.3
+  catchRadius: 1.3
+  searchDuration: 14
+  chaseGraceSeconds: 3.5
+  earliestPhase: 0
+  requiresBlackout: 0
+  cooldownSeconds: 120
+  selectionWeight: 1

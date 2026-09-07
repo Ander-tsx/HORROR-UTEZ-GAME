@@ -1,0 +1,28 @@
+{
+    "name": "UtezHorror.Tests.EditMode",
+    "rootNamespace": "UtezHorror.Tests",
+    "references": [
+        "UtezHorror.Core",
+        "UtezHorror.Utils",
+        "UtezHorror.Interaction",
+        "UtezHorror.Enemies",
+        "UtezHorror.Environment",
+        "UtezHorror.Player",
+        "UtezHorror.UI",
+        "Unity.AI.Navigation",
+        "UtezHorror.Editor",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "autoReferenced": false
+}

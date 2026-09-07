@@ -1,0 +1,25 @@
+{
+    "name": "UtezHorror.Editor",
+    "rootNamespace": "UtezHorror.EditorTools",
+    "references": [
+        "UtezHorror.Core",
+        "UtezHorror.Utils",
+        "UtezHorror.Player",
+        "UtezHorror.Interaction",
+        "UtezHorror.Enemies",
+        "UtezHorror.Environment",
+        "UtezHorror.Audio",
+        "UtezHorror.UI",
+        "UtezHorror.Input",
+        "Unity.InputSystem",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.RenderPipelines.Universal.Editor",
+        "Unity.AI.Navigation",
+        "Unity.AI.Navigation.Editor",
+        "Unity.Formats.Fbx.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "autoReferenced": true
+}

@@ -1,0 +1,10 @@
+{
+    "name": "UtezHorror.Enemies",
+    "rootNamespace": "UtezHorror.Enemies",
+    "references": [
+        "UtezHorror.Core",
+        "UtezHorror.Utils",
+        "Unity.AI.Navigation"
+    ],
+    "autoReferenced": true
+}

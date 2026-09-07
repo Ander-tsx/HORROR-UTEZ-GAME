@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="8" result="Passed" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-09-06 18:27:33Z" end-time="2026-09-06 18:27:38Z" duration="5.2330045">
+  <test-suite type="TestSuite" id="1019" name="HORROR-UTEZ-GAME" fullname="HORROR-UTEZ-GAME" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-06 18:27:33Z" end-time="2026-09-06 18:27:38Z" duration="5.233005" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1016" name="UtezHorror.Tests.PlayMode.dll" fullname="/Users/andertsx/Software/HORROR-UTEZ-GAME/Library/ScriptAssemblies/UtezHorror.Tests.PlayMode.dll" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-06 18:27:33Z" end-time="2026-09-06 18:27:38Z" duration="5.227435" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="36305" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1017" name="UtezHorror" fullname="UtezHorror" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-06 18:27:33Z" end-time="2026-09-06 18:27:38Z" duration="5.226659" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1018" name="Tests" fullname="UtezHorror.Tests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-09-06 18:27:33Z" end-time="2026-09-06 18:27:38Z" duration="5.226210" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1004" name="EnemyAnimationTests" fullname="UtezHorror.Tests.EnemyAnimationTests" classname="UtezHorror.Tests.EnemyAnimationTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-09-06 18:27:33Z" end-time="2026-09-06 18:27:35Z" duration="1.399348" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1005" name="TheEnemyMovesItsLegsWhileWalking" fullname="UtezHorror.Tests.EnemyAnimationTests.TheEnemyMovesItsLegsWhileWalking" methodname="TheEnemyMovesItsLegsWhileWalking" classname="UtezHorror.Tests.EnemyAnimationTests" runstate="Runnable" seed="1233872098" result="Passed" start-time="2026-09-06 18:27:33Z" end-time="2026-09-06 18:27:35Z" duration="1.389507" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[[Objectives] 4 components hidden across 4 rooms and 2 floors.
+[AnimTest] agent speed=1.50, animator enabled=False, walked=1.50 m, largest thigh swing=34.0°, largest vertex movement=0.600 m
+]]></output>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1006" name="GameClockTests" fullname="UtezHorror.Tests.GameClockTests" classname="UtezHorror.Tests.GameClockTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-06 18:27:35Z" end-time="2026-09-06 18:27:38Z" duration="3.325757" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1007" name="ClockWalksEveryPhaseAndEndsTheRun" fullname="UtezHorror.Tests.GameClockTests.ClockWalksEveryPhaseAndEndsTheRun" methodname="ClockWalksEveryPhaseAndEndsTheRun" classname="UtezHorror.Tests.GameClockTests" runstate="Runnable" seed="1943113107" result="Passed" start-time="2026-09-06 18:27:35Z" end-time="2026-09-06 18:27:38Z" duration="3.016554" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1008" name="PausedClockDoesNotAdvance" fullname="UtezHorror.Tests.GameClockTests.PausedClockDoesNotAdvance" methodname="PausedClockDoesNotAdvance" classname="UtezHorror.Tests.GameClockTests" runstate="Runnable" seed="1293440571" result="Passed" start-time="2026-09-06 18:27:38Z" end-time="2026-09-06 18:27:38Z" duration="0.305862" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1009" name="ObjectiveTests" fullname="UtezHorror.Tests.ObjectiveTests" classname="UtezHorror.Tests.ObjectiveTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-09-06 18:27:38Z" end-time="2026-09-06 18:27:38Z" duration="0.496476" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1011" name="ComponentsAreSpreadAroundTheBuilding" fullname="UtezHorror.Tests.ObjectiveTests.ComponentsAreSpreadAroundTheBuilding" methodname="ComponentsAreSpreadAroundTheBuilding" classname="UtezHorror.Tests.ObjectiveTests" runstate="Runnable" seed="2132375568" result="Passed" start-time="2026-09-06 18:27:38Z" end-time="2026-09-06 18:27:38Z" duration="0.207339" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[[Objectives] 4 components hidden across 4 rooms and 2 floors.
+]]></output>
+            </test-case>
+            <test-case id="1010" name="EveryComponentIsHiddenSomewhere" fullname="UtezHorror.Tests.ObjectiveTests.EveryComponentIsHiddenSomewhere" methodname="EveryComponentIsHiddenSomewhere" classname="UtezHorror.Tests.ObjectiveTests" runstate="Runnable" seed="1144585356" result="Passed" start-time="2026-09-06 18:27:38Z" end-time="2026-09-06 18:27:38Z" duration="0.147978" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[[Objectives] 4 components hidden across 4 rooms and 2 floors.
+]]></output>
+            </test-case>
+            <test-case id="1012" name="TakingAComponentRequiresHoldingOnLongEnough" fullname="UtezHorror.Tests.ObjectiveTests.TakingAComponentRequiresHoldingOnLongEnough" methodname="TakingAComponentRequiresHoldingOnLongEnough" classname="UtezHorror.Tests.ObjectiveTests" runstate="Runnable" seed="1578163330" result="Passed" start-time="2026-09-06 18:27:38Z" end-time="2026-09-06 18:27:38Z" duration="0.139196" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[[Objectives] 4 components hidden across 4 rooms and 2 floors.
+[Objectives] 'Gabinete' taken. 3 to go.
+]]></output>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1013" name="PowerSystemTests" fullname="UtezHorror.Tests.PowerSystemTests" classname="UtezHorror.Tests.PowerSystemTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-09-06 18:27:38Z" end-time="2026-09-06 18:27:38Z" duration="0.003191" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1015" name="PowerChangesAreBroadcastOnce" fullname="UtezHorror.Tests.PowerSystemTests.PowerChangesAreBroadcastOnce" methodname="PowerChangesAreBroadcastOnce" classname="UtezHorror.Tests.PowerSystemTests" runstate="Runnable" seed="1166603555" result="Passed" start-time="2026-09-06 18:27:38Z" end-time="2026-09-06 18:27:38Z" duration="0.001121" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1014" name="RepairCannotBeImmediatelyFollowedByAnotherOutage" fullname="UtezHorror.Tests.PowerSystemTests.RepairCannotBeImmediatelyFollowedByAnotherOutage" methodname="RepairCannotBeImmediatelyFollowedByAnotherOutage" classname="UtezHorror.Tests.PowerSystemTests" runstate="Runnable" seed="1172849894" result="Passed" start-time="2026-09-06 18:27:38Z" end-time="2026-09-06 18:27:38Z" duration="0.000912" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: /Users/andertsx/Library/Application Support/UtezHorrorTeam/HORROR-UTEZ-GAME/TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

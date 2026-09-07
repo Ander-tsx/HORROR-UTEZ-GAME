@@ -1,0 +1,13 @@
+{
+    "name": "UtezHorror.UI",
+    "rootNamespace": "UtezHorror.UI",
+    "references": [
+        "UtezHorror.Core",
+        "UtezHorror.Utils",
+        "UnityEngine.UI",
+        "UtezHorror.Input",
+        "Unity.InputSystem",
+        "Unity.RenderPipelines.Universal.Runtime"
+    ],
+    "autoReferenced": true
+}

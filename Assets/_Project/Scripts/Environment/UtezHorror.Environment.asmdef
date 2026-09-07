@@ -1,0 +1,9 @@
+{
+    "name": "UtezHorror.Environment",
+    "rootNamespace": "UtezHorror.Environment",
+    "references": [
+        "UtezHorror.Core",
+        "UtezHorror.Utils"
+    ],
+    "autoReferenced": true
+}

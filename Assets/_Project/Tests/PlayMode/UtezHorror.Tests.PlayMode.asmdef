@@ -1,0 +1,24 @@
+{
+    "name": "UtezHorror.Tests.PlayMode",
+    "rootNamespace": "UtezHorror.Tests",
+    "references": [
+        "UtezHorror.Core",
+        "UtezHorror.Utils",
+        "UtezHorror.Interaction",
+        "UtezHorror.Player",
+        "UnityEngine.TestRunner",
+        "UtezHorror.Input",
+        "Unity.InputSystem",
+        "Unity.InputSystem.TestFramework",
+        "UtezHorror.Enemies",
+        "Unity.AI.Navigation"
+    ],
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "autoReferenced": false
+}

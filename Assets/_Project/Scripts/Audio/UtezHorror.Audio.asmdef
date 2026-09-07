@@ -1,0 +1,10 @@
+{
+    "name": "UtezHorror.Audio",
+    "rootNamespace": "UtezHorror.Audio",
+    "references": [
+        "UtezHorror.Core",
+        "UtezHorror.Utils",
+        "UtezHorror.Player"
+    ],
+    "autoReferenced": true
+}

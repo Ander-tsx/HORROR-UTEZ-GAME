@@ -4,9 +4,8 @@ using System.Linq;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UtezHorror.Player;
+using UtezHorror.Utils;
 
 namespace UtezHorror.EditorTools
 {
@@ -174,6 +173,8 @@ namespace UtezHorror.EditorTools
             AddPlayer(playerPos);
             Debug.Log($"CecadecDemoBuilder: player spawn at {playerPos}");
 
+            SceneLightingSetup.ApplyInterior();
+
             EditorSceneManager.SaveScene(scene, ScenePath);
 
             var existing = EditorBuildSettings.scenes.ToList();
@@ -295,7 +296,11 @@ namespace UtezHorror.EditorTools
             // Left unparented at the scene root with an identity transform: the baked vertices are
             // already in absolute world space, so this GameObject's localToWorldMatrix must stay
             // identity or the mesh would be transformed a second time.
-            var colliderGo = new GameObject(found.name + "_Collider");
+            var colliderGo = new GameObject(found.name + "_Collider")
+            {
+                // Blocks line of sight and muffles noise; see GameLayers.OcclusionMask.
+                layer = GameLayers.Environment
+            };
             colliderGo.transform.position = Vector3.zero;
             colliderGo.transform.rotation = Quaternion.identity;
             colliderGo.transform.localScale = Vector3.one;
@@ -349,30 +354,8 @@ namespace UtezHorror.EditorTools
 
         private static void AddPlayer(Vector3 position)
         {
-            var player = new GameObject("Player");
-            player.transform.position = position;
-            var controller = player.AddComponent<CharacterController>();
-            controller.height = 1.8f;
-            controller.center = new Vector3(0f, 0.9f, 0f);
-            controller.radius = 0.35f;
-
-            var cameraGo = new GameObject("PlayerCamera");
-            cameraGo.transform.SetParent(player.transform);
-            cameraGo.transform.localPosition = new Vector3(0f, 1.6f, 0f);
-            var camera = cameraGo.AddComponent<Camera>();
-            cameraGo.AddComponent<AudioListener>();
-            camera.tag = "MainCamera";
-
-            var fpsController = player.AddComponent<FirstPersonController>();
-            var so = new SerializedObject(fpsController);
-            so.FindProperty("playerCamera").objectReferenceValue = camera;
-            so.ApplyModifiedProperties();
-
-            var playerInput = player.AddComponent<PlayerInput>();
-            var actions = AssetDatabase.LoadAssetAtPath<InputActionAsset>("Assets/_Project/Input/PlayerControls.inputactions");
-            playerInput.actions = actions;
-            playerInput.defaultActionMap = "Player";
-            playerInput.notificationBehavior = PlayerNotifications.SendMessages;
+            PlayerRigBuilder.Build(position);
+            PlayerRigBuilder.BuildGameManager();
         }
     }
 }

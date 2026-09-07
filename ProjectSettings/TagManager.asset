@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Enemy
+  - Interactable
+  - HidingSpot
+  - ObjectiveItem
+  - Generator
+  - ChargePoint
   layers:
   - Default
   - TransparentFX
@@ -13,14 +19,14 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Interactable
+  - HidingSpot
+  - Environment
+  - Prop
+  - TriggerVolume
+  - IgnoreVision
   - 
   - 
   - 

@@ -1,0 +1,12 @@
+{
+    "name": "UtezHorror.Player",
+    "rootNamespace": "UtezHorror.Player",
+    "references": [
+        "UtezHorror.Core",
+        "UtezHorror.Interaction",
+        "UtezHorror.Utils",
+        "UtezHorror.Input",
+        "Unity.InputSystem"
+    ],
+    "autoReferenced": true
+}

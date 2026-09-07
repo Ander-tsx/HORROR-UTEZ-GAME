@@ -1,0 +1,50 @@
+Unity Editor version:    6000.6.0f1 (f7f8ed4d1e24)
+Branch:                  6000.6/respin/6000.6.0f1-fa21a270ab12
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 15.7.3 (Build 24G419)
+Darwin version:          24.6.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        8192 MB
+Date:                    2026-09-06T18:37:46Z
+Launching external process: /Applications/Unity/Hub/Editor/6000.6.0f1/Unity.app/Contents/Resources/Scripting/NetCoreRuntime/dotnet
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 37269)
+VBCSCompiler prewarm took 2.82 ms
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-andertsx" at "2026-09-06T18:37:46.50679Z"
+Launching external process: /Applications/Unity/Hub/Editor/6000.6.0f1/Unity.app/Contents/Helpers/PackageManager/Server/UnityPackageManager
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/6000.6.0f1/Unity.app/Contents/MacOS/Unity
+-batchmode
+-projectPath
+.
+-runTests
+-testPlatform
+PlayMode
+-testResults
+Tests/results.xml
+-logFile
+Tests/log.txt
+Successfully changed project path to: /Users/andertsx/Software/HORROR-UTEZ-GAME
+/Users/andertsx/Software/HORROR-UTEZ-GAME
+[ExitDontLaunchBugReporter] Exiting without the bug reporter. Application will exit with return code 1
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              9df852930b3649ae93ec4e5c511821aa
+  Correlation Id:          8e1da63805497ec4753538d5d905c6f3
+  External correlation Id: 5417929996439020188
+  Machine Id:              Ur+GEc2ALrh/4RNQMrQG5aK6mug=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-andertsx" (connect: 0.00s, validation: 0.00s, handshake: 0.70s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-andertsx-notifications" at "2026-09-06T18:37:47.206275Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 4674247400238-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Module] Licensing Background thread has ended after 0.71s
+[Package Manager] Server process was shutdown

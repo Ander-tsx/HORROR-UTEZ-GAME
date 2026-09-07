@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e65689a46f04bc2ac1157e1617f7f8, type: 3}
+  m_Name: Pantalla
+  m_EditorClassIdentifier: UtezHorror.Core::UtezHorror.Core.ObjectiveItem
+  id: Pantalla
+  displayName: Pantalla
+  whereFound: Anclada al escritorio
+  stages:
+  - step: 0
+    seconds: 5.5
+    noiseRadius: 11
+  - step: 2
+    seconds: 3
+    noiseRadius: 13
+  - step: 3
+    seconds: 1.2
+    noiseRadius: 2
+  rushSpeed: 2.1
+  rushNoise: 2.6
+  encumbers: 1
+  carrySpeed: 0.75
+  allowsSprint: 1

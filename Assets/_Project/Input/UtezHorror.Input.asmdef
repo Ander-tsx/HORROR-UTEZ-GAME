@@ -1,0 +1,8 @@
+{
+    "name": "UtezHorror.Input",
+    "rootNamespace": "UtezHorror.Controls",
+    "references": [
+        "Unity.InputSystem"
+    ],
+    "autoReferenced": true
+}

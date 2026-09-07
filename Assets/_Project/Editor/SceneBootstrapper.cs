@@ -1,11 +1,10 @@
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
-using UtezHorror.Player;
+using UtezHorror.Utils;
 
 namespace UtezHorror.EditorTools
 {
@@ -57,36 +56,17 @@ namespace UtezHorror.EditorTools
             floor.name = "Floor";
             floor.transform.localScale = new Vector3(20f, 0.2f, 20f);
             floor.transform.position = new Vector3(0f, -0.1f, 0f);
+            floor.layer = GameLayers.Environment;
 
             CreateWall("Wall_North", new Vector3(0f, 1.5f, 10f), new Vector3(20f, 3f, 0.2f));
             CreateWall("Wall_South", new Vector3(0f, 1.5f, -10f), new Vector3(20f, 3f, 0.2f));
             CreateWall("Wall_East", new Vector3(10f, 1.5f, 0f), new Vector3(0.2f, 3f, 20f));
             CreateWall("Wall_West", new Vector3(-10f, 1.5f, 0f), new Vector3(0.2f, 3f, 20f));
 
-            var player = new GameObject("Player");
-            player.transform.position = new Vector3(0f, 1f, 0f);
-            var controller = player.AddComponent<CharacterController>();
-            controller.height = 1.8f;
-            controller.center = new Vector3(0f, 0.9f, 0f);
-            controller.radius = 0.35f;
+            PlayerRigBuilder.Build(new Vector3(0f, 1f, 0f));
+            PlayerRigBuilder.BuildGameManager();
 
-            var cameraGo = new GameObject("PlayerCamera");
-            cameraGo.transform.SetParent(player.transform);
-            cameraGo.transform.localPosition = new Vector3(0f, 1.6f, 0f);
-            var camera = cameraGo.AddComponent<Camera>();
-            cameraGo.AddComponent<AudioListener>();
-            camera.tag = "MainCamera";
-
-            var fpsController = player.AddComponent<FirstPersonController>();
-            var so = new SerializedObject(fpsController);
-            so.FindProperty("playerCamera").objectReferenceValue = camera;
-            so.ApplyModifiedProperties();
-
-            var playerInput = player.AddComponent<PlayerInput>();
-            var actions = AssetDatabase.LoadAssetAtPath<InputActionAsset>("Assets/_Project/Input/PlayerControls.inputactions");
-            playerInput.actions = actions;
-            playerInput.defaultActionMap = "Player";
-            playerInput.notificationBehavior = PlayerNotifications.SendMessages;
+            SceneLightingSetup.ApplyInterior();
 
             EditorSceneManager.SaveScene(scene, ScenePath);
 
@@ -98,6 +78,7 @@ namespace UtezHorror.EditorTools
         {
             var wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
             wall.name = name;
+            wall.layer = GameLayers.Environment;
             wall.transform.position = position;
             wall.transform.localScale = scale;
         }
