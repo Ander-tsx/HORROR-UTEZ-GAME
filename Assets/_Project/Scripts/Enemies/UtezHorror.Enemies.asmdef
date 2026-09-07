@@ -4,6 +4,7 @@
     "references": [
         "UtezHorror.Core",
         "UtezHorror.Utils",
+        "UtezHorror.Interaction",
         "Unity.AI.Navigation"
     ],
     "autoReferenced": true
