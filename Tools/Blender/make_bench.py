@@ -34,8 +34,8 @@ TARGET_LENGTH = 1.80
 
 # Triangle budget per part. A PS1 prop lived between 100 and 400 triangles; this is a piece the
 # torch lands on directly in a corridor the player walks a hundred times, so it gets a little
-# more. The frame keeps a larger share because tubing loses its shape faster than a flat shell.
-TARGET_TRIS = {"Frame": 800, "Seat": 900}
+# more. The frame keeps a larger share because tubing needs more geometry. We're increasing it for the premium HD look.
+TARGET_TRIS = {"Frame": 3500, "Seat": 2500}
 
 # Shell thickness, in metres. The source is modelled as open shells with no thickness at all —
 # 230 boundary edges on the seat — which is normal for a render asset and fatal in a game: an

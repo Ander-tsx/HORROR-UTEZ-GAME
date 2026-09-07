@@ -135,6 +135,7 @@ namespace UtezHorror.Enemies
                 return;
             }
 
+            HandleDoors();
             DetectStuck();
 
             switch (state)
@@ -143,6 +144,19 @@ namespace UtezHorror.Enemies
                 case EnemyState.Investigate: TickInvestigate(); break;
                 case EnemyState.Chase: TickChase(); break;
                 case EnemyState.Search: TickSearch(); break;
+            }
+        }
+
+        private void HandleDoors()
+        {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, 2.5f);
+            foreach (var col in colliders)
+            {
+                var door = col.GetComponentInParent<UtezHorror.Interaction.Door>();
+                if (door != null && !door.IsOpen && !door.IsLocked)
+                {
+                    door.Interact(gameObject);
+                }
             }
         }
 

@@ -34,34 +34,37 @@ namespace UtezHorror.Environment
     /// </summary>
     public static class AtmospherePresets
     {
+        /// Interior: warm amber-tinged darkness. The torch is still needed — the lights
+        /// provide just enough glow to know you're indoors. Puddles on the floor reflect
+        /// the flickering tubes. Fog is almost absent so the torch beam carries far.
         public static readonly Atmosphere InteriorEarly = new()
         {
-            fogColor = new Color(0.055f, 0.062f, 0.055f),
-            fogDensity = 0.020f,
-            ambient = new Color(0.042f, 0.047f, 0.043f)
+            fogColor  = new Color(0.028f, 0.022f, 0.018f),
+            fogDensity = 0.012f,
+            ambient   = new Color(0.018f, 0.014f, 0.010f)  // near-black warm tint
         };
 
         public static readonly Atmosphere InteriorLate = new()
         {
-            fogColor = new Color(0.012f, 0.014f, 0.013f),
-            fogDensity = 0.030f,
-            ambient = new Color(0.012f, 0.014f, 0.013f)
+            fogColor  = new Color(0.008f, 0.006f, 0.005f),
+            fogDensity = 0.022f,
+            ambient   = new Color(0.006f, 0.005f, 0.004f)
         };
 
+        /// Exterior: essentially pitch black. Flashlight is mandatory.
+        /// Dense fog eats trees beyond ~12m and hides the world edge completely.
         public static readonly Atmosphere ExteriorEarly = new()
         {
-            // Bright enough to read as fog against the trees, dark enough to still be night.
-            // At 0.32 it looked like daylight haze and flattened the whole wood into one grey.
-            fogColor = new Color(0.150f, 0.170f, 0.142f),
-            fogDensity = 0.038f,
-            ambient = new Color(0.072f, 0.082f, 0.070f)
+            fogColor  = new Color(0.012f, 0.018f, 0.014f),  // barely visible dark-green
+            fogDensity = 0.065f,                             // was 0.038 — very thick now
+            ambient   = new Color(0.008f, 0.010f, 0.008f)   // almost no ambient, torch required
         };
 
         public static readonly Atmosphere ExteriorLate = new()
         {
-            fogColor = new Color(0.040f, 0.050f, 0.042f),
-            fogDensity = 0.075f,
-            ambient = new Color(0.026f, 0.031f, 0.026f)
+            fogColor  = new Color(0.004f, 0.006f, 0.005f),
+            fogDensity = 0.110f,                             // end-game fog is suffocating
+            ambient   = new Color(0.003f, 0.004f, 0.003f)
         };
 
         /// <summary>Applies one directly to the scene's render settings.</summary>

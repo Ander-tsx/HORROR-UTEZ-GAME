@@ -169,6 +169,7 @@ namespace UtezHorror.EditorTools
             }
 
             AddLights();
+            AddPuddles();
             var playerPos = FindSpawnPoint(structureCollider);
             AddPlayer(playerPos);
             Debug.Log($"CecadecDemoBuilder: player spawn at {playerPos}");
@@ -324,32 +325,87 @@ namespace UtezHorror.EditorTools
 
         private static void AddLights()
         {
+            // Interior lights are deliberately dim — the player's torch is the primary light.
+            // Most lights flicker or are out; a few stay stable so the player can navigate.
+            // Warm amber: failing fluorescents in a building that hasn't been serviced in years.
             var hallwayXs = new[] { 2f, 8f, 14f, 20f };
-            var floorYs = new[] { 2.6f, 3.2f + 2.6f };
+            var floorYs   = new[] { 2.6f, 3.2f + 2.6f };
+            bool[] stable = { false, true, false, false }; // only one per floor stays stable
+
             foreach (var fy in floorYs)
             {
-                foreach (var x in hallwayXs)
+                for (int i = 0; i < hallwayXs.Length; i++)
                 {
-                    CreatePointLight($"HallLight_{fy}_{x}", new Vector3(x, fy, 1.5f), 6f, 1.2f);
+                    var go = CreatePointLight($"HallLight_{fy}_{hallwayXs[i]}",
+                                             new Vector3(hallwayXs[i], fy, 1.5f),
+                                             range: 7f, intensity: 0.55f,
+                                             color: new Color(1.0f, 0.85f, 0.60f));
+                    if (!stable[i])
+                        go.AddComponent<UtezHorror.Environment.FlickeringLight>();
                 }
 
                 var roomXs = new[] { 3.5f, 9.5f, 15.5f };
                 foreach (var x in roomXs)
                 {
-                    CreatePointLight($"RoomLight_{fy}_{x}", new Vector3(x, fy, 6f), 7f, 1.3f);
+                    var go = CreatePointLight($"RoomLight_{fy}_{x}",
+                                             new Vector3(x, fy, 6f),
+                                             range: 6f, intensity: 0.40f,
+                                             color: new Color(1.0f, 0.80f, 0.55f));
+                    go.AddComponent<UtezHorror.Environment.FlickeringLight>();
                 }
             }
         }
 
-        private static void CreatePointLight(string name, Vector3 position, float range, float intensity)
+        private static void AddPuddles()
+        {
+            // Small reflective puddles on the floor — high metallic + smoothness so the
+            // flickering lights above are visible as blurred reflections in the water.
+            var puddles = new[]
+            {
+                new Vector3(4f,   0.01f, 2.0f),
+                new Vector3(11f,  0.01f, 1.5f),
+                new Vector3(17f,  0.01f, 2.2f),
+                new Vector3(7f,   3.6f,  1.8f),   // second floor
+                new Vector3(14f,  3.6f,  2.0f),
+            };
+
+            // Create a shared puddle material (high spec, low roughness)
+            Material puddleMat = new Material(Shader.Find("Universal Render Pipeline/Lit"))
+            {
+                name = "Mat_Puddle"
+            };
+            puddleMat.SetColor("_BaseColor",  new Color(0.04f, 0.05f, 0.06f, 1f));
+            puddleMat.SetFloat("_Metallic",   0.0f);
+            puddleMat.SetFloat("_Smoothness", 0.97f);  // near-mirror
+
+            for (int i = 0; i < puddles.Length; i++)
+            {
+                float sizeX = UnityEngine.Random.Range(0.5f, 1.4f);
+                float sizeZ = UnityEngine.Random.Range(0.3f, 0.9f);
+
+                var go = GameObject.CreatePrimitive(PrimitiveType.Quad);
+                go.name = $"Puddle_{i}";
+                go.transform.position = puddles[i];
+                go.transform.rotation = Quaternion.Euler(90f, UnityEngine.Random.Range(0f, 360f), 0f);
+                go.transform.localScale = new Vector3(sizeX, sizeZ, 1f);
+                go.GetComponent<MeshRenderer>().sharedMaterial = puddleMat;
+                // Quads have a box collider by default — remove it so the player doesn't trip
+                Object.DestroyImmediate(go.GetComponent<Collider>());
+            }
+        }
+
+        private static GameObject CreatePointLight(string name, Vector3 position, float range,
+                                                    float intensity, Color color)
         {
             var go = new GameObject(name);
             go.transform.position = position;
             var light = go.AddComponent<Light>();
-            light.type = LightType.Point;
-            light.range = range;
+            light.type      = LightType.Point;
+            light.range     = range;
             light.intensity = intensity;
-            light.color = new Color(1f, 0.96f, 0.88f);
+            light.color     = color;
+            light.shadows   = LightShadows.Soft;
+            return go;
         }
 
         private static void AddPlayer(Vector3 position)
@@ -359,3 +415,4 @@ namespace UtezHorror.EditorTools
         }
     }
 }
+
